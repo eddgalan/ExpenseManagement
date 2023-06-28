@@ -1,0 +1,11 @@
+ci-app:
+  container_name: expman-web
+  build: .
+  restart: always
+  ports:
+    - 8002:8081
+  volumes:
+    - ./:/var/www/html/
+  external_links:
+    - "mysql:mysql"
+  command: sh start.sh
